@@ -26,24 +26,24 @@ public class KrtechEcp implements Job {
             Thread.sleep(3000);
             // Пока с таким костылем в ввиде сканера
 
-            Scanner scanner = new Scanner(System.in);
+            //Scanner scanner = new Scanner(System.in);
 
             WebElement login = driver.findElement(By.xpath("/html/body/main/section[1]/div/div[2]/button[1]"));
             login.click();
             Thread.sleep(3000);
 
-            String id = scanner.nextLine();
+            //String id = scanner.nextLine();
 
-            WebElement name = driver.findElement(By.id("form-name" + id));
+            WebElement name = driver.findElement(By.xpath("/html/body/section[1]/form/div[1]/input"));
             name.sendKeys("Test");
 
-            WebElement email = driver.findElement(By.id("form-email" + id));
+            WebElement email = driver.findElement(By.xpath("/html/body/section[1]/form/div[2]/input"));
             email.sendKeys("test@mail.ru");
 
-            WebElement phoneNumber = driver.findElement(By.id("form-phone" + id));
+            WebElement phoneNumber = driver.findElement(By.xpath("/html/body/section[1]/form/div[4]/input"));
             phoneNumber.sendKeys("+79780000000");
 
-            WebElement checkBox = driver.findElement(By.id("order-agree" + id));
+            WebElement checkBox = driver.findElement(By.xpath("/html/body/section[1]/form/div[6]"));
             checkBox.click();
 
             WebElement submitButton = driver.findElement(By.xpath("/html/body/section[1]/form/button"));
